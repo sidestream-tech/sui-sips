@@ -27,7 +27,8 @@ We propose to develop and deploy an official Sui/Move package with:
     - Once created, the attestation will be frozen
     - Each attestation type will have required base qualities
         - `id` — UID of the attestation type
-        - `type_name` — `type_name<T>()` of the `attestation.data` type (enforced to be unique)
+        - `type_name` — `std::type_name::get<T>()` of the `attestation.data` type
+            - Enforced to be unique to prevent two attestation types with the same `type_name`
         - `is_revocable` — whether or not the attestations of this type can be revoked
         - `display_fields` — fields used to create `sui::display::Display` object
         - `display_values` — values used to create `sui::display::Display` object
