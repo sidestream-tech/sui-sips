@@ -45,7 +45,7 @@ We propose to develop and deploy an official Sui/Move package with:
    - Revoking attestations will be possible by their `sender`s, unless the attestation type is explicitly created as irrevocable
       - Revocation will update a table with revoked attestation ids used as keys
 	- Revocation will emit `Revoke` event with `id`, `type_name` and `attested` fields
-- A per-sender list of trusted attestation types. It will allow known entities (like the package publisher) to recommend specific types reviewed and approved by the community.
+- A per-sender list of trusted attestation types. It will allow known entities to recommend specific types reviewed and approved by the community.
 - A per-sender list of trusted attesters. It will allow users to publicly “follow” or “unfollow” specific attesters, while keeping a list of them independent from the app they are using: an explorer, a wallet or a package manager.
 
 ## Rationale
