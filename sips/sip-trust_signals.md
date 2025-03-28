@@ -30,8 +30,6 @@ We propose to develop and deploy an official Sui/Move package with:
         - `type_name` — `std::type_name::get<T>()` of the `attestation.data` type
             - Enforced to be unique to prevent two attestation types with the same `type_name`
         - `is_revocable` — whether or not the attestations of this type can be revoked
-        - `display_fields` — fields used to create `sui::display::Display` object
-        - `display_values` — values used to create `sui::display::Display` object
     - Each attestation type can introduce a custom arbitrary logic implemented in an external module that defines `<T>` type (for example, the whitelisting logic of who can issue attestations can be implemented this way)
     - Creation will emit event with `id`, `type_name` and `is_revocable`
     - The sender would be required to create Display type for their attestation type
