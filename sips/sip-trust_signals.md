@@ -31,20 +31,17 @@ We propose to develop and deploy an official Sui/Move package with:
             - Enforced to be unique to prevent two attestation types with the same `type_name`
         - `is_revocable` — whether or not the attestations of this type can be revoked
     - Each attestation type can introduce a custom arbitrary logic implemented in an external module that defines `<T>` type (for example, the whitelisting logic of who can issue attestations can be implemented this way)
-    - Creation will emit event with `id`, `type_name` and `is_revocable`
     - The sender would be required to create Display type for their attestation type
     - Created Display type will be immutable to prevent misleading updates or renames
 - A permissionless attestation registry. It will allow anyone to create new attestations using any existing attestation types
    - Once created, the attestation can not be transferred or deleted
    - Each attestation will have obligatory set of fields
        - `id` — UID of the attestation
-       - `sender` — the address who created the attestation
+       - `receiver` – the address which is being attested
+       - `created_by` — the address who created the attestation
        - `data` — the extra fields stored in the specific “attestation type”
    - Created attestation will be transferred to the attested package or module
-   - Creation will emit `Attest` event with `id`, `type_name` and `attested` fields
-   - Revoking attestations will be possible by their `sender`s, unless the attestation type is explicitly created as irrevocable
-      - Revocation will update a table with revoked attestation ids used as keys
-	- Revocation will emit `Revoke` event with `id`, `type_name` and `attested` fields
+   - Revoking attestations will be possible by the same sender as original `created_by`, unless the attestation type is explicitly created as irrevocable
 - A per-sender list of trusted attestation types. It will allow known entities to recommend specific types reviewed and approved by the community.
 - A per-sender list of trusted attesters. It will allow users to publicly “follow” or “unfollow” specific attesters, while keeping a list of them independent from the app they are using: an explorer, a wallet or a package manager.
 
