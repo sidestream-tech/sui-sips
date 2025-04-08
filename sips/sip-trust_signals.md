@@ -55,7 +55,8 @@ There are no issues with backwards compatibility, as this proposal focuses on es
 
 ## Reference Implementation
 
-To be provided by Sidestream Labs.
+Is developed by Sidestream Labs in [sidestream-tech/sui-attestation-registry](https://github.com/sidestream-tech/sui-attestation-registry).
+
 
 ## Security Considerations
 
