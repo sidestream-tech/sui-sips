@@ -29,7 +29,6 @@ We propose to develop and deploy an official Sui/Move package with:
         - `id` — UID of the attestation type
         - `type_name` — `std::type_name::get<T>()` of the `attestation.data` type
             - Enforced to be unique to prevent two attestation types with the same `type_name`
-        - `is_revocable` — whether or not the attestations of this type can be revoked
     - Each attestation type can introduce a custom arbitrary logic implemented in an external module that defines `<T>` type (for example, the whitelisting logic of who can issue attestations can be implemented this way)
     - The sender would be required to create Display type for their attestation type
     - Created Display type will be immutable to prevent misleading updates or renames
