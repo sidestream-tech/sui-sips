@@ -23,7 +23,7 @@ Currently, there is no straightforward way for the users to ensure safety of a p
 ## Specification
 
 We propose to develop and deploy an official Sui/Move package with:
-- A permissionless "attestation type" registry. It will allow anyone to create new discoverable attestation types.
+- A permissionless "attestation type" registry. It will allow anyone to create new discoverable attestation types
     - Once created, the attestation will be frozen
     - Each attestation type will have required base qualities
         - `id` — UID of the attestation type
@@ -42,8 +42,6 @@ We propose to develop and deploy an official Sui/Move package with:
        - `data` — the extra fields stored in the specific “attestation type”
    - Created attestation will be transferred to the attested package or module
    - Attestation creation function will return `RevokeCap` object, which can be used to revoke original attestation
-- A per-sender list of trusted attestation types. It will allow known entities to recommend specific types reviewed and approved by the community.
-- A per-sender list of trusted attesters. It will allow users to publicly “follow” or “unfollow” specific attesters, while keeping a list of them independent from the app they are using: an explorer, a wallet or a package manager.
 
 ## Rationale
 
